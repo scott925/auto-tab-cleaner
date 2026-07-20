@@ -45,6 +45,14 @@ The extension works automatically once installed. To adjust settings, click the 
 | **Whitelist** | Domains that will never be auto-closed |
 | **Restore Last Closed** | Reopen the last batch of auto-closed tabs |
 
+**Default state** — just installed, no whitelist:
+
+![Default state](screenshots/default.png)
+
+**With whitelist** — two domains added, Max tabs set to 35:
+
+![With whitelist](screenshots/with-whitelist.png)
+
 ### Permissions
 
 | Permission | Reason |
@@ -95,6 +103,14 @@ The extension works automatically once installed. To adjust settings, click the 
 | **+ Current** | 将当前网站加入白名单 |
 | **白名单列表** | 白名单内的域名不会被自动关闭 |
 | **Restore Last Closed** | 恢复上一批被自动关闭的标签页 |
+
+**初始状态** — 刚安装，白名单为空：
+
+![初始状态](screenshots/default.png)
+
+**添加白名单后** — 已添加两个域名，Max tabs 设为 35：
+
+![添加状态](screenshots/with-whitelist.png)
 
 ### 权限说明
 
