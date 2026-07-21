@@ -35,9 +35,8 @@ async function cleanup() {
 
 async function updateBadge(count) {
   const { maxTabs = DEFAULT_MAX_TABS } = await chrome.storage.local.get('maxTabs');
-  const text = count > maxTabs ? String(count) : '';
   const color = count > maxTabs ? '#e05' : '#888';
-  chrome.action.setBadgeText({ text });
+  chrome.action.setBadgeText({ text: String(count) });
   chrome.action.setBadgeBackgroundColor({ color });
 }
 
@@ -47,6 +46,11 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 chrome.tabs.onCreated.addListener(() => cleanup());
+
+chrome.tabs.onRemoved.addListener(async () => {
+  const tabs = await chrome.tabs.query({});
+  await updateBadge(tabs.length);
+});
 
 chrome.alarms.onAlarm.addListener(({ name }) => {
   if (name === 'cleanup') cleanup();
