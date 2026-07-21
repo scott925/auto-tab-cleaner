@@ -52,6 +52,9 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create('cleanup', { periodInMinutes: 5 });
 });
 
+// SW 每次唤醒时主动刷新 badge，避免系统挂起后 badge 消失
+chrome.tabs.query({}).then(tabs => updateBadge(tabs.length));
+
 chrome.tabs.onCreated.addListener(() => cleanup());
 
 chrome.tabs.onRemoved.addListener(async () => {
