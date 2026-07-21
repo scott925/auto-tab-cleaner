@@ -15,11 +15,17 @@ When your open tab count exceeds the limit (default: 20), the extension automati
 ### Features
 
 - Auto-closes least recently used tabs when the limit is exceeded
+- Toggle auto-close on/off without losing your settings
+- Toolbar badge always shows current tab count with color indicators:
+  - Green — within the first third of the limit
+  - Yellow — within the second third
+  - Orange — approaching the limit
+  - Red — over the limit
 - Checks on every new tab and every 5 minutes
-- Toolbar badge shows current tab count when over the limit
-- Whitelist domains you never want auto-closed
-- Restore the last batch of closed tabs with one click
+- Whitelist domains you never want auto-closed; add the current site with one click
+- Restore the last batch of auto-closed tabs with one click
 - Skips pinned tabs, the active tab, and tabs playing audio
+- UI adapts to browser language (English & 简体中文)
 
 ### Installation
 
@@ -36,11 +42,12 @@ Coming soon.
 
 ### Usage
 
-The extension works automatically once installed. To adjust settings, click the extension icon in the toolbar:
+The extension works automatically once installed. Click the toolbar icon to adjust settings:
 
 | Setting | Description |
 |---------|-------------|
-| **Max tabs** | Set how many tabs to keep (default: 20) |
+| **Auto close** | Toggle automatic tab closing on or off |
+| **Max tabs** | Maximum number of tabs to keep (default: 20) |
 | **+ Current** | Add the current site to the whitelist |
 | **Whitelist** | Domains that will never be auto-closed |
 | **Restore Last Closed** | Reopen the last batch of auto-closed tabs |
@@ -74,11 +81,17 @@ The extension works automatically once installed. To adjust settings, click the 
 ### 功能特性
 
 - 超过上限时自动关闭最久未使用的标签页
+- 可随时开关自动关闭功能，设置不会丢失
+- 工具栏图标始终显示当前标签页数量，并根据数量显示不同颜色：
+  - 绿色 — 在上限的前三分之一以内
+  - 黄色 — 在上限的前三分之二以内
+  - 橙色 — 接近上限
+  - 红色 — 超过上限
 - 每次新建标签页及每隔 5 分钟触发一次检查
-- 超出上限时，工具栏图标显示当前标签页数量
-- 支持白名单，白名单内的域名永远不会被自动关闭
-- 一键恢复上一次被自动关闭的标签页
+- 支持白名单，一键将当前网站加入白名单，白名单内域名永不被关闭
+- 一键恢复上一批被自动关闭的标签页
 - 自动跳过：固定标签页、当前激活标签页、正在播放音频的标签页
+- 界面根据浏览器语言自动切换（English & 简体中文）
 
 ### 安装方式
 
@@ -99,10 +112,11 @@ The extension works automatically once installed. To adjust settings, click the 
 
 | 设置项 | 说明 |
 |--------|------|
-| **Max tabs** | 设置最多保留的标签页数量（默认 20） |
-| **+ Current** | 将当前网站加入白名单 |
-| **白名单列表** | 白名单内的域名不会被自动关闭 |
-| **Restore Last Closed** | 恢复上一批被自动关闭的标签页 |
+| **自动关闭** | 开启或关闭自动关闭功能 |
+| **最多标签数** | 最多保留的标签页数量（默认 20） |
+| **+ 当前网站** | 将当前网站加入白名单 |
+| **白名单** | 白名单内的域名不会被自动关闭 |
+| **恢复上次关闭的标签页** | 重新打开上一批被自动关闭的标签页 |
 
 **初始状态** — 刚安装，白名单为空：
 
