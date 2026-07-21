@@ -5,6 +5,18 @@ function showStatus(msg) {
   setTimeout(() => { statusEl.textContent = ''; }, 1500);
 }
 
+// ── Auto close toggle ─────────────────────────────────
+const autoCloseToggle = document.getElementById('autoClose');
+
+chrome.storage.local.get('autoClose', ({ autoClose = true }) => {
+  autoCloseToggle.checked = autoClose;
+});
+
+autoCloseToggle.addEventListener('change', () => {
+  chrome.storage.local.set({ autoClose: autoCloseToggle.checked });
+  showStatus(autoCloseToggle.checked ? 'Auto close on.' : 'Auto close off.');
+});
+
 // ── Max tabs ──────────────────────────────────────────
 const maxTabsInput = document.getElementById('maxTabs');
 

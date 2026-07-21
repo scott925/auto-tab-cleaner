@@ -11,12 +11,12 @@ function matchesWhitelist(url, whitelist) {
 }
 
 async function cleanup() {
-  const { maxTabs = DEFAULT_MAX_TABS, whitelist = [] } = await chrome.storage.local.get(['maxTabs', 'whitelist']);
+  const { maxTabs = DEFAULT_MAX_TABS, whitelist = [], autoClose = true } = await chrome.storage.local.get(['maxTabs', 'whitelist', 'autoClose']);
   const tabs = await chrome.tabs.query({});
 
   await updateBadge(tabs.length);
 
-  if (tabs.length <= maxTabs) return;
+  if (!autoClose || tabs.length <= maxTabs) return;
 
   const closeable = tabs
     .filter(t => !t.active && !t.pinned && !t.audible && t.id != null && !matchesWhitelist(t.url, whitelist))
