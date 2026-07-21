@@ -35,7 +35,13 @@ async function cleanup() {
 
 async function updateBadge(count) {
   const { maxTabs = DEFAULT_MAX_TABS } = await chrome.storage.local.get('maxTabs');
-  const color = count > maxTabs ? '#e05' : '#4a8cff';
+  const third = maxTabs / 3;
+  let color;
+  if (count > maxTabs)        color = '#e53935'; // 超限：红
+  else if (count > third * 2) color = '#fb8c00'; // 接近上限：橙
+  else if (count > third)     color = '#f9a825'; // 适中：黄
+  else                        color = '#43a047'; // 安全：绿
+
   chrome.action.setBadgeText({ text: String(count) });
   chrome.action.setBadgeBackgroundColor({ color });
   chrome.action.setBadgeTextColor({ color: '#ffffff' });
