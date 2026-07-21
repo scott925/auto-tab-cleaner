@@ -35,7 +35,7 @@ async function cleanup() {
 
 async function updateBadge(count) {
   const { maxTabs = DEFAULT_MAX_TABS } = await chrome.storage.local.get('maxTabs');
-  const color = count > maxTabs ? '#e05' : '#888';
+  const color = count > maxTabs ? '#e05' : '#4a8cff';
   chrome.action.setBadgeText({ text: String(count) });
   chrome.action.setBadgeBackgroundColor({ color });
 }
