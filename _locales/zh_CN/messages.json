@@ -1,0 +1,22 @@
+{
+  "appName":               { "message": "Auto Tab Cleaner" },
+  "appDesc":               { "message": "当标签页过多时，自动关闭最久未使用的标签页。" },
+  "autoClose":             { "message": "自动关闭" },
+  "autoCloseDesc":         { "message": "超过上限时自动关闭最久未使用的标签页" },
+  "maxTabs":               { "message": "最多标签数" },
+  "maxTabsDesc":           { "message": "超过此数量时关闭最旧的标签页" },
+  "whitelist":             { "message": "白名单" },
+  "whitelistDesc":         { "message": "白名单内的域名永远不会被自动关闭" },
+  "whitelistPlaceholder":  { "message": "例如 notion.so" },
+  "addCurrent":            { "message": "+ 当前网站" },
+  "add":                   { "message": "添加" },
+  "restoreLastClosed":     { "message": "恢复上次关闭的标签页" },
+  "restoreDesc":           { "message": "重新打开上一批被自动关闭的标签页" },
+  "saved":                 { "message": "已保存。" },
+  "alreadyInList":         { "message": "已在白名单中。" },
+  "added":                 { "message": "已添加。" },
+  "removed":               { "message": "已移除。" },
+  "nothingToRestore":      { "message": "没有可恢复的标签页。" },
+  "autoCloseOn":           { "message": "自动关闭已开启。" },
+  "autoCloseOff":          { "message": "自动关闭已关闭。" }
+}

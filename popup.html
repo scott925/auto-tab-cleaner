@@ -67,6 +67,11 @@
       font-size: 12px;
       font-weight: 600;
       color: #555;
+      margin-bottom: 4px;
+    }
+    .section-desc {
+      font-size: 11px;
+      color: #999;
       margin-bottom: 6px;
     }
     .whitelist-input-row {
@@ -131,6 +136,12 @@
       background: #f5f5f5;
     }
     button.full:hover { background: #e8e8e8; }
+    .restore-desc {
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      margin-top: 4px;
+    }
     #status {
       margin-top: 8px;
       font-size: 12px;
@@ -143,8 +154,8 @@
 <body>
   <div class="setting">
     <div class="setting-label">
-      <span>Auto close</span>
-      <small>Automatically close oldest tabs when over limit</small>
+      <span data-i18n="autoClose"></span>
+      <small data-i18n="autoCloseDesc"></small>
     </div>
     <label class="toggle">
       <input type="checkbox" id="autoClose" checked>
@@ -153,24 +164,24 @@
   </div>
   <div class="setting">
     <div class="setting-label">
-      <span>Max tabs</span>
-      <small>Close oldest tabs when count exceeds this</small>
+      <span data-i18n="maxTabs"></span>
+      <small data-i18n="maxTabsDesc"></small>
     </div>
     <input id="maxTabs" type="number" min="1" max="200" value="20">
   </div>
 
-  <div class="section-title">Whitelist</div>
-  <div style="font-size:11px;color:#999;margin-bottom:6px;">Tabs on these domains will never be auto-closed</div>
+  <div class="section-title" data-i18n="whitelist"></div>
+  <div class="section-desc" data-i18n="whitelistDesc"></div>
   <div class="whitelist-input-row">
-    <input id="domainInput" type="text" placeholder="e.g. notion.so">
-    <button id="addCurrent">+ Current</button>
-    <button id="addDomain">Add</button>
+    <input id="domainInput" type="text" data-i18n-placeholder="whitelistPlaceholder">
+    <button id="addCurrent" data-i18n="addCurrent"></button>
+    <button id="addDomain" data-i18n="add"></button>
   </div>
   <div id="whitelist-items"></div>
 
   <hr class="divider">
-  <button class="full" id="restore">Restore Last Closed</button>
-  <div style="font-size:11px;color:#999;text-align:center;margin-top:4px;">Reopen the last batch of auto-closed tabs</div>
+  <button class="full" id="restore" data-i18n="restoreLastClosed"></button>
+  <div class="restore-desc" data-i18n="restoreDesc"></div>
   <div id="status"></div>
   <script src="popup.js"></script>
 </body>

@@ -1,3 +1,13 @@
+const t = chrome.i18n.getMessage.bind(chrome.i18n);
+
+// 初始化所有 i18n 文案
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  el.textContent = t(el.dataset.i18n);
+});
+document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+  el.placeholder = t(el.dataset.i18nPlaceholder);
+});
+
 const statusEl = document.getElementById('status');
 
 function showStatus(msg) {
@@ -14,7 +24,7 @@ chrome.storage.local.get('autoClose', ({ autoClose = true }) => {
 
 autoCloseToggle.addEventListener('change', () => {
   chrome.storage.local.set({ autoClose: autoCloseToggle.checked });
-  showStatus(autoCloseToggle.checked ? 'Auto close on.' : 'Auto close off.');
+  showStatus(autoCloseToggle.checked ? t('autoCloseOn') : t('autoCloseOff'));
 });
 
 // ── Max tabs ──────────────────────────────────────────
@@ -28,7 +38,7 @@ maxTabsInput.addEventListener('change', () => {
   const val = Math.max(1, Math.min(200, parseInt(maxTabsInput.value) || 20));
   maxTabsInput.value = val;
   chrome.storage.local.set({ maxTabs: val });
-  showStatus('Saved.');
+  showStatus(t('saved'));
 });
 
 // ── Whitelist ─────────────────────────────────────────
@@ -72,14 +82,14 @@ document.getElementById('addDomain').addEventListener('click', async () => {
 
   const { whitelist = [] } = await chrome.storage.local.get('whitelist');
   if (whitelist.includes(domain)) {
-    showStatus('Already in list.');
+    showStatus(t('alreadyInList'));
     return;
   }
   whitelist.push(domain);
   await chrome.storage.local.set({ whitelist });
   renderWhitelist(whitelist);
   input.value = '';
-  showStatus('Added.');
+  showStatus(t('added'));
 });
 
 document.getElementById('domainInput').addEventListener('keydown', (e) => {
@@ -93,14 +103,14 @@ document.getElementById('whitelist-items').addEventListener('click', async (e) =
   const updated = whitelist.filter(d => d !== domain);
   await chrome.storage.local.set({ whitelist: updated });
   renderWhitelist(updated);
-  showStatus('Removed.');
+  showStatus(t('removed'));
 });
 
 // ── Restore ───────────────────────────────────────────
 document.getElementById('restore').addEventListener('click', async () => {
   const { lastClosed = [] } = await chrome.storage.local.get('lastClosed');
   if (lastClosed.length === 0) {
-    showStatus('Nothing to restore.');
+    showStatus(t('nothingToRestore'));
     return;
   }
   for (const url of lastClosed) {

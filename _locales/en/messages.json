@@ -1,0 +1,22 @@
+{
+  "appName":               { "message": "Auto Tab Cleaner" },
+  "appDesc":               { "message": "Automatically close the least recently used tabs when you have too many open." },
+  "autoClose":             { "message": "Auto close" },
+  "autoCloseDesc":         { "message": "Automatically close oldest tabs when over limit" },
+  "maxTabs":               { "message": "Max tabs" },
+  "maxTabsDesc":           { "message": "Close oldest tabs when count exceeds this" },
+  "whitelist":             { "message": "Whitelist" },
+  "whitelistDesc":         { "message": "Tabs on these domains will never be auto-closed" },
+  "whitelistPlaceholder":  { "message": "e.g. notion.so" },
+  "addCurrent":            { "message": "+ Current" },
+  "add":                   { "message": "Add" },
+  "restoreLastClosed":     { "message": "Restore Last Closed" },
+  "restoreDesc":           { "message": "Reopen the last batch of auto-closed tabs" },
+  "saved":                 { "message": "Saved." },
+  "alreadyInList":         { "message": "Already in list." },
+  "added":                 { "message": "Added." },
+  "removed":               { "message": "Removed." },
+  "nothingToRestore":      { "message": "Nothing to restore." },
+  "autoCloseOn":           { "message": "Auto close on." },
+  "autoCloseOff":          { "message": "Auto close off." }
+}
