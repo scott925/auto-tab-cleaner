@@ -38,6 +38,7 @@ async function updateBadge(count) {
   const color = count > maxTabs ? '#e05' : '#4a8cff';
   chrome.action.setBadgeText({ text: String(count) });
   chrome.action.setBadgeBackgroundColor({ color });
+  chrome.action.setBadgeTextColor({ color: '#ffffff' });
 }
 
 // alarm 只在安装/更新时创建一次，避免 SW 唤醒时反复重置计时器
