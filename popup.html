@@ -14,8 +14,18 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 12px;
+    }
+    .setting-label { flex: 1; }
+    .setting-label span {
+      display: block;
       font-size: 13px;
       color: #333;
+    }
+    .setting-label small {
+      display: block;
+      font-size: 11px;
+      color: #999;
+      margin-top: 1px;
     }
     .setting input[type="number"] {
       width: 52px;
@@ -132,18 +142,25 @@
 </head>
 <body>
   <div class="setting">
-    <span>Auto close</span>
+    <div class="setting-label">
+      <span>Auto close</span>
+      <small>Automatically close oldest tabs when over limit</small>
+    </div>
     <label class="toggle">
       <input type="checkbox" id="autoClose" checked>
       <span class="toggle-slider"></span>
     </label>
   </div>
   <div class="setting">
-    <span>Max tabs</span>
+    <div class="setting-label">
+      <span>Max tabs</span>
+      <small>Close oldest tabs when count exceeds this</small>
+    </div>
     <input id="maxTabs" type="number" min="1" max="200" value="20">
   </div>
 
   <div class="section-title">Whitelist</div>
+  <div style="font-size:11px;color:#999;margin-bottom:6px;">Tabs on these domains will never be auto-closed</div>
   <div class="whitelist-input-row">
     <input id="domainInput" type="text" placeholder="e.g. notion.so">
     <button id="addCurrent">+ Current</button>
@@ -153,6 +170,7 @@
 
   <hr class="divider">
   <button class="full" id="restore">Restore Last Closed</button>
+  <div style="font-size:11px;color:#999;text-align:center;margin-top:4px;">Reopen the last batch of auto-closed tabs</div>
   <div id="status"></div>
   <script src="popup.js"></script>
 </body>
